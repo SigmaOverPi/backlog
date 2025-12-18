@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - (log)</title>
+    <link rel="stylesheet" href="gamepage.css">
+    <script type="module" src="gamepage.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+
+        <div class="logo">
+            <a href="dashboard.html"><img src="backlog.png" alt="logo"></a>
+        </div>
+
+        <div class="menu">
+            <a href="mylog.html">My Log</a>
+            <a href="community.html">Community</a>
+            <a href="stats.html">Stats</a>
+            <a href="games.html"><button>Add Game</button></a>
+        </div>
+
+    </div>
+
+    <div id="loading" class="loading-screen">Loading Game Data...</div>
+
+    <div id="game-content" class="hidden">
+
+        <div class="game-hero" id="detail-hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 id="detail-title">Loading...</h1>
+                <p id="detail-dev">Developer Name</p>
+            </div>
+        </div>
+
+        <div class="game-content-container">
+            <div class="col-left">
+                <img id="detail-cover" src="" alt="Cover" class="poster-art">
+
+                <div class="card-box">
+                    <h3>Log Options</h3>
+                    <button id="btn-add" class="btn-primary-full">Add to Log</button>
+                    <button class="btn-secondary-full btn-mark-played">Mark as Played</button>
+                    <button class="btn-secondary-full btn-write-review">Write a Review</button>
+                </div>
+
+                <div class="card-box">
+                    <h3>Average Completion</h3>
+                    <div class="stat-row">
+                        <span>Main Story</span>
+                        <span id="detail-playtime">-- Hours</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-right">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="details">Details</button>
+                    <button class="tab-btn" data-tab="reviews">User Reviews</button>
+                </div>
+
+                <!-- DETAILS TAB CONTENT -->
+                <div id="view-details">
+                    <div class="section">
+                        <h2>Summary</h2>
+                        <div id="detail-desc" class="description-text"></div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="section">
+                        <h2>Details</h2>
+                        <div class="detail-grid">
+                            <div class="detail-item">
+                                <span class="label">Release Date</span>
+                                <span class="value" id="detail-release">--</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Genre</span>
+                                <span class="value" id="detail-genre">--</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Publisher</span>
+                                <span class="value" id="detail-pub">--</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Rating</span>
+                                <span class="value" id="detail-rating">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REVIEWS TAB CONTENT -->
+                <div id="view-reviews" class="hidden">
+                    <div class="section">
+                        <h2>User Reviews</h2>
+                        <div id="reviews-container" class="side-cards">
+                            <p style="color: grey;">Loading reviews...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-played" class="modal hidden">
+        <div class="modal-content">
+            <h2>Mark as Completed</h2>
+            <label>Platform</label>
+            <select id="played-platform" class="modal-input">
+                <option value="PC">PC</option>
+                <option value="PlayStation 5">PlayStation 5</option>
+                <option value="Xbox Series X">Xbox Series X</option>
+                <option value="Switch">Nintendo Switch</option>
+                <option value="Steam Deck">Steam Deck</option>
+            </select>
+
+            <label>Hours Played</label>
+            <input type="number" id="played-hours" class="modal-input" placeholder="e.g. 45">
+
+            <div class="modal-actions">
+                <button id="btn-cancel-played" class="btn-secondary">Cancel</button>
+                <button id="btn-confirm-played" class="btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-review" class="modal hidden">
+        <div class="modal-content">
+            <h2>Write a Review</h2>
+            <div class="star-rating-input">
+                <span class="star-in" data-value="1">★</span>
+                <span class="star-in" data-value="2">★</span>
+                <span class="star-in" data-value="3">★</span>
+                <span class="star-in" data-value="4">★</span>
+                <span class="star-in" data-value="5">★</span>
+            </div>
+            <textarea id="review-text" class="modal-input" placeholder="What did you think?"></textarea>
+
+            <div class="modal-actions">
+                <button id="btn-cancel-review" class="btn-secondary">Cancel</button>
+                <button id="btn-confirm-review" class="btn-primary">Post Review</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Community Activity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="community.css">
+    <script type="module" src="community.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+
+        <div class="logo">
+            <a href="dashboard.html"><img src="backlog.png" alt="logo"></a>
+        </div>
+
+        <div class="menu">
+            <a href="mylog.html">My Log</a>
+            <a href="community.html" class="active">Community</a>
+            <a href="stats.html">Stats</a>
+            <a href="games.html"><button>Add Game</button></a>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="search-hero" id="feed-header">
+            <h1>Community Feed</h1>
+            <p style="color:#888">Recent activity and discussions.</p>
+            <button id="btn-create-post" class="btn-primary-full" style="max-width:200px; margin-top:20px;">
+                + Create Forum Post
+            </button>
+        </div>
+
+        <div id="feed-container" class="feed-list">
+            <p style="text-align:center; color:#666">Loading activity...</p>
+        </div>
+
+        <div id="write-post-view" class="hidden" style="max-width:600px; margin:0 auto;">
+            <h2>New Discussion</h2>
+            <input type="text" id="post-title" placeholder="Title (e.g., Thoughts on the new DLC?)"
+                style="margin-bottom:15px;">
+            <textarea id="post-content" placeholder="Write your thoughts here..."
+                style="width:100%; height:200px; background:#111; border:1px solid #333; color:white; padding:15px; border-radius:8px; box-sizing:border-box; font-family:inherit;"></textarea>
+            <div style="display:flex; gap:10px; margin-top:15px;">
+                <button id="btn-cancel-post" class="btn-secondary-full">Cancel</button>
+                <button id="btn-submit-post" class="btn-primary-full">Post to Forum</button>
+            </div>
+        </div>
+
+        <div id="read-post-view" class="hidden" style="max-width:800px; margin:0 auto;">
+            <button id="btn-back-feed"
+                style="background:none; border:none; color:#888; cursor:pointer; margin-bottom:20px;">
+                ← Back to Feed
+            </button>
+            <h1 id="read-title" style="margin-bottom:10px;">Post Title</h1>
+            <div style="color:#666; font-size:14px; margin-bottom:30px;">
+                Posted by <span id="read-user" style="color:white;">User</span> on <span id="read-date">Date</span>
+            </div>
+            <div id="read-body" class="description-text" style="white-space: pre-wrap;">
+                Post content...
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Log - (log)</title>
+    <link rel="stylesheet" href="mylog.css">
+    <script type="module" src="mylog.js"></script>
+</head>
+
+<body>
+
+    <div class="nav">
+
+        <div class="logo">
+            <a href="dashboard.html"><img src="backlog.png" alt="logo"></a>
+        </div>
+
+        <div class="menu">
+            <a href="mylog.html">My Log</a>
+            <a href="community.html">Community</a>
+            <a href="stats.html">Stats</a>
+            <a href="games.html"><button>Add Game</button></a>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <!-- PROFILE HEADER -->
+        <div class="profile-header">
+            <div class="avatar-container">
+                <img src="https://ui-avatars.com/api/?name=User&background=random" alt="Avatar" id="user-avatar">
+            </div>
+            <div class="profile-info">
+                <h1 id="user-name">Loading...</h1>
+                <p class="bio">Lover of epic RPGs and challenging indie platformers.</p>
+                <p class="member-since" id="member-since">Loading...</p>
+            </div>
+            <!-- <button class="btn-edit">Edit Profile</button> -->
+            <button id="btn-logout" class="btn-secondary"
+                style="margin-left: 10px; height: 40px; margin-top: 10px;">Logout</button>
+        </div>
+
+        <!-- STATS GRID -->
+        <div class="stats-grid">
+            <div class="stat-box">
+                <span class="stat-label">Games Completed</span>
+                <span class="stat-number" id="stat-completed">--</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Hours Logged</span>
+                <span class="stat-number" id="stat-hours">--</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Avg. Completion</span>
+                <span class="stat-number" id="stat-avg">--</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Favorite Platform</span>
+                <span class="stat-number" id="stat-genre">--</span>
+            </div>
+        </div>
+
+        <!-- TABS -->
+        <div class="profile-tabs">
+            <button class="tab active">Game Log</button>
+            <button class="tab">Reviews</button>
+            <button class="tab">Forums</button>
+        </div>
+
+        <hr class="divider">
+
+        <!-- VIEWS -->
+        <div id="view-log">
+            <!-- FILTERS -->
+            <div class="filter-bar">
+                <div class="search-wrapper">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search in Game Log...">
+                </div>
+
+                <div class="dropdowns">
+                    <select id="filter-status">
+                        <option value="all">Filter by Status</option>
+                        <option value="completed">Completed</option>
+                        <option value="library">In Library</option>
+                    </select>
+
+                    <select id="sort-by">
+                        <option value="recent">Sort by: Recent</option>
+                        <option value="hours">Sort by: Hours</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- GAME TABLE -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 50%;">GAME TITLE</th>
+                            <th>PLATFORM</th>
+                            <th>STATUS</th>
+                            <th style="text-align: right;">HOURS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="game-table-body">
+                        <!-- Rows will be injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- REVIEWS VIEW -->
+        <div id="view-reviews" class="hidden">
+            <div class="reviews-grid" id="reviews-grid">
+                <!-- Reviews injected here -->
+            </div>
+        </div>
+
+        <!-- FORUMS VIEW -->
+        <div id="view-forums" class="hidden">
+            <div class="reviews-grid" id="forums-grid">
+                <!-- Forums injected here -->
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

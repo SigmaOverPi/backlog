@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --primary-color: #141414;
+    --secondary-color: #F5F5F5;
+    --tertiary-color: #256AF4;
+    --border-color: #1F2937;
+}
+
+/* 1. CRITICAL FIX: This ensures padding doesn't increase width/height */
+* {
+    box-sizing: border-box;
+    color: whitesmoke;
+    font-family: "Jetbrains Mono", sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+}
+
+.logo {
+    width: 130px;
+    height: 40px;
+}
+
+.user-icon {
+    width: 30px;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a.active,
+a:hover {
+    color: white;
+}
+
+.page {
+    display: flex;
+    /* 3. Make page take exactly full screen height */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* --- LEFT COLUMN --- */
+.side-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+    /* Added separator */
+}
+
+.top-side,
+.bottom-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Use gap instead of margin for alignment */
+    margin-bottom: 20px;
+}
+
+.user-img {
+    width: 40px;
+    height: 40px;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.menu-item-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/** --- MIDDLE COLUMN --- */
+.main-content {
+    display: flex;
+    flex-direction: column;
+
+    width: 75%;
+    padding: 20px 40px;
+
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.overview {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    border: 1.5px solid var(--border-color);
+    border-radius: 10px;
+    flex: 1;
+    /* Make cards stretch evenly */
+    padding: 15px;
+    text-align: left;
+    /* 5. Removed fixed height (150px) to allow fitting */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+p.title {
+    margin-top: 0;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+p.stat {
+    font-size: 1.8em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+p.gain {
+    color: #23C45F;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+/* --- TABLE ADJUSTMENTS --- */
+.recents {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.table-container {
+    border: 1px solid #1f2533;
+    border-radius: 12px;
+    padding: 0 24px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* 6. Allow table container to scroll internally if screen is tiny */
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 15px 0;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #1f2533;
+    position: sticky;
+    /* Keep header visible */
+    top: 0;
+    background-color: var(--primary-color);
+}
+
+td {
+    padding: 15px 0;
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #1f2533;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+    width: 40%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    width: 30%;
+    color: #94a3b8;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    width: 30%;
+    color: #94a3b8;
+}
+
+/** --- RIGHT COLUMN --- */
+.side-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 25%;
+    border-left: 1px solid var(--border-color);
+}
+
+.featured,
+.recent-activity {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /* Split space evenly between these two */
+    overflow: hidden;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.side-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+    /* Scrollable list */
+}
+
+.card-item {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+.game-img {
+    width: 60px;
+    /* Fixed width for images */
+    height: 70px;
+    /* border-radius: 6px; */
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.game-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.game-info p,
+.stat-info p {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.4;
+}
+
+.stat-img {
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 50%;
+    padding: 6px;
+    flex-shrink: 0;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .menu {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .page {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .side-nav {
+        display: none;
+        /* Hide if it's there, but it's commented out in HTML */
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .overview {
+        flex-direction: column;
+    }
+
+    .side-content {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding: 20px;
+    }
+
+    .featured,
+    .recent-activity {
+        flex: none;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 500px;
+        /* Force scroll */
+    }
+}

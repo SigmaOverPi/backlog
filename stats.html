@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats - (log)</title>
+    <link rel="stylesheet" href="stats.css">
+    <script type="module" src="stats.js"></script>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="logo">
+            <a href="dashboard.html"><img src="backlog.png" alt="logo"></a>
+        </div>
+        <div class="menu">
+            <a href="dashboard.html">My Log</a>
+            <a href="community.html">Community</a>
+            <a href="stats.html" class="active">Stats</a>
+            <a href="games.html"><button>Add Game</button></a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Header -->
+        <div class="header">
+            <div class="header-text">
+                <h1>Your Gaming Stats</h1>
+                <p>Aggregated data from all your logged games.</p>
+            </div>
+
+            <div class="time-filter">
+                <button class="filter-btn">This Week</button>
+                <button class="filter-btn">This Month</button>
+                <button class="filter-btn active">All Time</button>
+            </div>
+        </div>
+
+        <!-- Top KPIs -->
+        <div class="top-grid">
+            <div class="stat-card">
+                <h3>Total Games Logged</h3>
+                <div class="stat-value" id="total-games">--</div>
+                <!-- <div class="stat-trend trend-up">+5%</div> -->
+            </div>
+
+            <div class="stat-card">
+                <h3>Average Completion</h3>
+                <div class="stat-value" id="avg-hours">-- hours</div>
+                <!-- <div class="stat-trend trend-up">+2.1%</div> -->
+            </div>
+
+            <div class="stat-card">
+                <h3>Favorited Platform</h3>
+                <div class="stat-value" id="top-genre">--</div>
+                <!-- <div class="stat-trend trend-down">-1%</div> -->
+            </div>
+        </div>
+
+        <!-- Bottom Charts -->
+        <div class="bottom-grid">
+
+            <!-- Trending Chart -->
+            <div class="large-card">
+                <h3>Top Games by Hours</h3>
+                <h2>Top 5</h2>
+                <!-- <div class="sub-text trend-up" id="top-games-sub">This Month +15%</div> -->
+
+                <div class="chart-container" id="chart-container">
+                    <div
+                        style=" margin: 0 auto; display: flex; justify-content: center; align-items: center; height: 100%;">
+                        <p style="text-align: center; padding: 20px; color: grey;">Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platform Stats -->
+            <div class="large-card">
+                <h3>Platform Distribution</h3>
+                <h2>All Platforms</h2>
+                <!-- <div class="sub-text trend-down">All Time -3%</div> -->
+
+                <div class="progress-list" id="platform-list">
+                    <div
+                        style=" margin: 0 auto; display: flex; justify-content: center; align-items: center; height: 100%;">
+                        <p style="text-align: center; padding: 20px; color: grey;">Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

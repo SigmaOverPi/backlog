@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <script type="module" src="dashboard.js"></script>
+    <title>Dashboard - (log)</title>
+</head>
+
+<body>
+
+    <div class="nav">
+
+        <div class="logo">
+            <a href="dashboard.html"><img src="backlog.png" alt="logo"></a>
+        </div>
+
+        <div class="menu">
+            <a href="mylog.html">My Log</a>
+            <a href="community.html">Community</a>
+            <a href="stats.html">Stats</a>
+            <a href="games.html"><button>Add Game</button></a>
+        </div>
+
+    </div>
+
+    <div class="page">
+
+        <!-- <div class="side-nav">
+
+            <div class="top-side">
+
+                <a style="text-decoration: none;" href="">
+                    <div class="user">
+                        <div class="user-img">
+                            <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                fill="#000000">
+                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                <g id="SVGRepo_iconCarrier">
+                                    <path
+                                        d="M691.573 338.89c-1.282 109.275-89.055 197.047-198.33 198.331-109.292 1.282-197.065-90.984-198.325-198.331-0.809-68.918-107.758-68.998-106.948 0 1.968 167.591 137.681 303.31 305.272 305.278C660.85 646.136 796.587 503.52 798.521 338.89c0.811-68.998-106.136-68.918-106.948 0z"
+                                        fill="#4A5699"></path>
+                                    <path
+                                        d="M294.918 325.158c1.283-109.272 89.051-197.047 198.325-198.33 109.292-1.283 197.068 90.983 198.33 198.33 0.812 68.919 107.759 68.998 106.948 0C796.555 157.567 660.839 21.842 493.243 19.88c-167.604-1.963-303.341 140.65-305.272 305.278-0.811 68.998 106.139 68.919 106.947 0z"
+                                        fill="#C45FA0"></path>
+                                    <path
+                                        d="M222.324 959.994c0.65-74.688 29.145-144.534 80.868-197.979 53.219-54.995 126.117-84.134 201.904-84.794 74.199-0.646 145.202 29.791 197.979 80.867 54.995 53.219 84.13 126.119 84.79 201.905 0.603 68.932 107.549 68.99 106.947 0-1.857-213.527-176.184-387.865-389.716-389.721-213.551-1.854-387.885 178.986-389.721 389.721-0.601 68.991 106.349 68.933 106.949 0.001z"
+                                        fill="#E5594F"></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="user-info">
+                            <p>Alex Drake</p>
+                            <p>alex_d</p>
+                        </div>
+                    </div>
+                </a>
+
+
+
+                <div class="menu-item">
+                    <div class="menu-item-icon">
+                        <svg fill="#FFFFFF" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M 7.3904 46.8061 C 10.0478 46.8061 11.8711 45.8363 13.5005 43.8190 L 17.0114 39.5709 C 17.5158 38.9696 18.0977 38.6787 18.6796 38.6787 L 37.3206 38.6787 C 37.9022 38.6787 38.4842 38.9696 38.9692 39.5709 L 42.4802 43.8190 C 44.1288 45.8363 45.9327 46.8061 48.6098 46.8061 C 53.0321 46.8061 56 43.8577 56 39.3188 C 56 37.3790 55.5344 35.1484 54.7975 32.6461 C 53.6141 28.6697 51.5388 23.2578 49.5406 19.0680 C 47.8920 15.5765 47.0383 13.9859 42.9263 13.0548 C 39.2600 12.2208 34.1974 11.6582 27.9903 11.6582 C 21.7832 11.6582 16.7205 12.2208 13.0738 13.0548 C 8.9615 13.9859 8.1081 15.5765 6.4399 19.0680 C 4.4614 23.2578 2.3859 28.6697 1.2026 32.6461 C .4461 35.1484 0 37.3790 0 39.3188 C 0 43.8577 2.9484 46.8061 7.3904 46.8061 Z M 12.2979 25.3333 C 12.2979 24.3635 12.8798 23.7621 13.9079 23.7621 L 17.3800 23.7621 L 17.3800 20.3676 C 17.3800 19.3783 17.9619 18.7771 18.9318 18.7771 C 19.8823 18.7771 20.4448 19.3783 20.4448 20.3676 L 20.4448 23.7621 L 23.7423 23.7621 C 24.8285 23.7621 25.4687 24.3635 25.4687 25.3333 C 25.4687 26.3420 24.8285 26.9627 23.7423 26.9627 L 20.4448 26.9627 L 20.4448 30.3572 C 20.4448 31.3465 19.8823 31.9672 18.9318 31.9672 C 17.9619 31.9672 17.3800 31.3465 17.3800 30.3572 L 17.3800 26.9627 L 13.9079 26.9627 C 12.8798 26.9627 12.2979 26.3420 12.2979 25.3333 Z M 37.0683 22.3074 C 37.0683 20.7168 38.3098 19.4947 39.8614 19.4947 C 41.4326 19.4947 42.6546 20.7168 42.6546 22.3074 C 42.6546 23.8785 41.4326 25.0812 39.8614 25.0812 C 38.3098 25.0812 37.0683 23.8785 37.0683 22.3074 Z M 31.3654 28.0489 C 31.3654 26.4584 32.5875 25.2363 34.1587 25.2363 C 35.7298 25.2363 36.9325 26.4584 36.9325 28.0489 C 36.9325 29.6201 35.7298 30.8422 34.1587 30.8422 C 32.5875 30.8422 31.3654 29.6201 31.3654 28.0489 Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="menu-item-text">My Log</div>
+                </div>
+
+
+
+
+                <div class="menu-item">
+                    <div class="menu-item-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <path
+                                    d="M13 20V18C13 15.2386 10.7614 13 8 13C5.23858 13 3 15.2386 3 18V20H13ZM13 20H21V19C21 16.0545 18.7614 14 16 14C14.5867 14 13.3103 14.6255 12.4009 15.6311M11 7C11 8.65685 9.65685 10 8 10C6.34315 10 5 8.65685 5 7C5 5.34315 6.34315 4 8 4C9.65685 4 11 5.34315 11 7ZM18 9C18 10.1046 17.1046 11 16 11C14.8954 11 14 10.1046 14 9C14 7.89543 14.8954 7 16 7C17.1046 7 18 7.89543 18 9Z"
+                                    stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="menu-item-text">Community</div>
+                </div>
+
+            </div>
+
+            <div class="bottom-side">
+
+                <a href="games.html"><button>Add New Game</button></a>
+
+                <div class="menu-item">
+                    <div class="menu-item-icon">
+                        <svg fill="#FFFFFF" viewBox="0 -8 72 72" id="Layer_1" data-name="Layer 1"
+                            xmlns="http://www.w3.org/2000/svg" stroke="#FFFFFF">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <title>cog</title>
+                                <path
+                                    d="M56.74,20.89l-1-2.31c3.33-7.53,3.11-7.75,2.46-8.41L54,6l-.42-.35h-.49c-.26,0-1,0-7.51,2.93l-2.38-1C40.09,0,39.77,0,38.87,0h-6c-.9,0-1.25,0-4.1,7.66l-2.37,1C22,6.78,19.45,5.84,18.75,5.84l-.56,0-4.58,4.49c-.7.65-.94.88,2.58,8.3l-1,2.3c-7.79,3-7.79,3.3-7.79,4.23v5.89c0,.92,0,1.25,7.82,4l1,2.29c-3.33,7.53-3.11,7.76-2.46,8.41L18,50l.42.37h.5c.25,0,1,0,7.5-3l2.38,1C31.9,56,32.21,56,33.12,56h6c.92,0,1.25,0,4.11-7.66l2.39-1c4.37,1.85,6.93,2.79,7.61,2.79l.57,0,4.62-4.52c.66-.66.89-.89-2.62-8.28l1-2.3c7.81-3,7.81-3.33,7.81-4.23V24.93C64.57,24,64.57,23.68,56.74,20.89ZM36,37.8A9.8,9.8,0,1,1,46,28,9.91,9.91,0,0,1,36,37.8Z">
+                                </path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="menu-item-text">Settings</div>
+                </div>
+
+            </div>
+
+        </div> -->
+
+        <div class="main-content">
+
+            <div>
+                <h1 id="welcome-msg">Welcome back, Alex!</h1>
+                <p style="color: grey;">Here is an overview of your current stats and recent activity.</p>
+            </div>
+
+            <div class="overview">
+
+                <div class="card">
+                    <p class="title">Games Completed</p>
+                    <p class="stat" id="stat-total">0</p>
+                    <p class="gain">Lifetime</p>
+                </div>
+
+                <div class="card">
+                    <p class="title">Hours Played</p>
+                    <p class="stat" id="stat-hours">0</p>
+                    <p class="gain">Total</p>
+                </div>
+
+                <div class="card">
+                    <p class="title">Current Streak</p>
+                    <p class="stat">3 Days</p>
+                    <p class="gain">Active</p>
+                </div>
+
+            </div>
+
+            <div class="recents">
+                <h2>Recently Played</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Game Title</th>
+                                <th>Platform</th>
+                                <th>Time Played</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="played-table-body">
+                            <tr>
+                                <td colspan="4" style="text-align: center; padding: 20px; color: grey;">Loading...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="side-content">
+
+            <div class="featured">
+                <h3>Featured Games</h3>
+
+                <div class="side-cards" id="featured-container">
+                    <p style="color: grey; padding: 10px;">Loading recommendations...</p>
+                </div>
+            </div>
+
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+
+                <div class="side-cards" id="activity-container">
+                    <p style="color: grey; padding: 10px;">Loading activity...</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
