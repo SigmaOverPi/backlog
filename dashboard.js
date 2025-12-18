@@ -19,7 +19,7 @@ onAuthStateChanged(auth, (user) => {
         //* Set username
         //* Uses displayName if available, otherwise uses email name before the @
         const name = user.displayName || user.email.split('@')[0];
-        welcomeMsg.innerText = `Welcome back, ${name}!`;
+        welcomeMsg.innerText = `Welcome, ${name}!`;
 
         //* Load user data
         loadCompletedGames(user.uid);
