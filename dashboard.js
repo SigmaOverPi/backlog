@@ -1,8 +1,9 @@
 import { db, auth } from "./firebase-config.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
 import { collection, query, orderBy, limit, getDocs } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+import { rawgApiKey } from "./config.js";
 
-const apikey = '5621eb80dd714deb972a5821c4ddf73d';
+const apikey = rawgApiKey;
 
 //* Elements
 const welcomeMsg = document.getElementById('welcome-msg');
